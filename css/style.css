@@ -1,0 +1,93 @@
+@import url("reset.css");
+/* SMALL */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f5f8f6;
+    color: #1a1a1a;
+    display: grid;
+    place-items: center;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: 200px;
+    background-color: rgb(103, 158, 108);
+    border-radius: 10px;
+    padding: 2em;
+    text-align: center;
+    place-items: center;
+}
+
+.contact-card img.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.title, .cellphone {
+    font-style: italic;
+}
+
+.company {
+    font-weight: bold; 
+    font-size: 1em;
+}
+
+/*MEDIUM*/
+@media (min-width: 500px) {
+
+  .contact-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    max-width: 500px;
+    gap: 1em;
+    text-align: center;
+  }
+
+  .contact-card img.profile-pic {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .left {
+    grid-column: 1;
+  }
+
+  .company {
+    grid-column: 2;
+  }
+}
+
+/*BIG*/
+@media (min-width: 768px) {
+
+  .contact-card {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: auto;
+    gap: 1em;                        
+    max-width: 700px;
+  }
+
+  .contact-card img.profile-pic {
+    grid-column: 1;
+    place-items: center; /*cannot center this in the whole card for the life of me*/
+  }
+
+  .left {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .company {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
